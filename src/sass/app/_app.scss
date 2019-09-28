@@ -1,0 +1,87 @@
+body {
+  background-color: #2e2e2e;
+  font-family: "Avenir Next", sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.content {
+  max-width: 600px;
+  margin: 10% 5% 0;
+  transition: 0.3s ease;
+
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tablinks {
+  width: 100%;
+  background: $main-color;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+  color: white;
+  padding: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.tablinks.active {
+  background-color: white;
+  color: $main-color;
+}
+
+.wrapper_tabcontent {
+  background-color: white;
+  position: relative;
+  opacity: 1;
+  padding: 2rem 1.5rem;
+  overflow: hidden;
+  transition: all 1s ease;
+  border-bottom: 0.3rem solid $main-color;
+}
+
+.js-enabled .tabcontent {
+  height: 0;
+  overflow: hidden;
+}
+
+.tabcontent.active {
+  transition: all 1s ease;
+  min-height: 180px;
+  height: auto;
+}
+
+.js-enabled .tab-content__header {
+  @extend .sr-only;
+}
+
+.tabcontent p {
+  color: $text;
+}
+
+@media screen and (min-width: 345px) {
+  .tabs {
+    flex-direction: row;
+  }
+
+  .tablinks {
+    flex-grow: 1;
+  }
+
+}
